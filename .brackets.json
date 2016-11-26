@@ -1,0 +1,20 @@
+{
+    "sass.enabled": false,
+    "path": {
+        "scss/main.scss": {
+            "sass.enabled": true,
+            "sass.options": {
+                "outputDir": "../css/",
+                "includePaths": [],
+                "sourceComments": true,
+                "outputStyle": "nested"
+            },
+            "mikaeljorhult.bracketsAutoprefixer.visualCascade": false,
+            "mikaeljorhult.bracketsAutoprefixer.browsers": [
+                "> 1%",
+                "last 2 versions",
+                "Firefox ESR"
+            ]
+        }
+    }
+}
