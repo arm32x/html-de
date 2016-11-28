@@ -1,0 +1,166 @@
+@import "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Open+Sans:600";
+
+$window-header-height: 36px;
+$desktop-background: linear-gradient(to bottom, #555555 0%, #333333 100%) #444444;
+
+body {
+    margin: 0px;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    user-select: none;
+}
+
+os-desktop {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: $desktop-background;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+os-window {
+    position: absolute;
+    border: 1px solid #aaaaaa;
+    border-radius: 10px;
+    min-width: 242px;
+    min-height: $window-header-height - 1px;
+    overflow: hidden;
+    z-index: 0;
+    
+    &.is-maximized {
+        width: calc(100vw - 2px);
+        height: calc(100vh - 2px);
+        border-radius: 0px;
+        transform: translate(0px, 0px) !important;
+        z-index: 1 !important;
+    }
+    
+    &.is-minimized {
+        display: inline-block;
+        width: auto !important;
+        height: $window-header-height !important;
+    }
+    
+    header {
+        position: relative;
+        border-bottom: 1px solid #cccccc;
+        width: 100%;
+        height: $window-header-height;
+        background: linear-gradient(to bottom, #fafafa 0%, #eeeeee 100%) #f4f4f4;
+        font-family: "Open Sans", "Lato", sans-serif;
+        cursor: move;
+        
+        .window-controls {
+            position: absolute;
+            float: right;
+            right: 0px;
+            top: 0px;
+            height: $window-header-height;
+            padding: {
+                left: 10px;
+                right: 6px;
+                bottom: 1px;
+            };
+            cursor: initial;
+            
+            [is = "window-control"] {
+                width: 16px;
+                height: 16px;
+                padding: 0px;
+                margin: {
+                    top: ($window-header-height - 16px) / 2;
+                    bottom: ($window-header-height - 16px) / 2;
+                    left: 0px;
+                    right: 4px;
+                }
+                border: 1px solid #aaaaaa;
+                border-radius: 8px;
+                outline: none;
+                background: linear-gradient(to bottom, #dedede 0%, #c4c4c4 100%) #d1d1d1;
+                
+                &:hover {
+                    background: linear-gradient(to bottom, #eeeeee 0%, #c4c4c4 100%) #dedede;
+                }
+                
+                &:active {
+                    background: linear-gradient(to bottom, #c4c4c4 0%, #cccccc 100%) #c4c4c4;
+                }
+                
+                &.window-close {
+                    border: 1px solid #991717;
+                    background: linear-gradient(to bottom, #e57373 0%, #ef5350 100%) #ea6362;
+
+                    &:hover {
+                        background: linear-gradient(to bottom, #ef9a9a 0%, #ef5350 100%) #e57373;
+                    }
+
+                    &:active {
+                        background: linear-gradient(to bottom, #ef5350 0%, #e57373 100%) #c95959;
+                    }
+                }
+                
+                &.window-minimize {
+                    border: 1px solid #f9a825;
+                    background: linear-gradient(to bottom, #fff176 0%, #ffee58 100%) #ffee58;
+
+                    &:hover {
+                        background: linear-gradient(to bottom, #fffde7 0%, #ffee58 100%) #fff176;
+                    }
+
+                    &:active {
+                        background: linear-gradient(to bottom, #ffee58 0%, #fffde7 100%) #fff59d;
+                    }
+                }
+                
+                &.window-maximize {
+                    border: 1px solid #689f38;
+                    background: linear-gradient(to bottom, #aed581 0%, #9ccc65 100%) #a5d173;
+
+                    &:hover {
+                        background: linear-gradient(to bottom, #c5e1a5 0%, #9ccc65 100%) #aed581;
+                    }
+
+                    &:active {
+                        background: linear-gradient(to bottom, #9ccc65 0%, #aed581 100%) #9ccc65;
+                    }
+                }
+            }
+            
+        }
+        
+        .title {
+            display: inline-block;
+            width: calc(100% - 16px);
+            height: $window-header-height;
+            line-height: $window-header-height;
+            padding-left: 16px;
+        }
+    }
+    
+    main {
+        height: 100%;
+        padding: 8px;
+        background: linear-gradient(to bottom, #e0e0e0 0%, #c8c8c8 100%) #e1e1e1;
+        
+        &.textual {
+            padding: 16px;
+            background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%) #fdfdfd;
+        }
+    }
+}
+
+os-card {
+    display: block;
+    margin: 16px;
+    padding: 16px;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%) #fdfdfd;
+    
+    os-window main & {
+        margin: 8px;
+    }
+}
