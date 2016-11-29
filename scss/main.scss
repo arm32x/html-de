@@ -19,6 +19,7 @@ os-desktop {
     background: $desktop-background;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    z-index: -999;
 }
 
 os-window {
@@ -34,7 +35,8 @@ os-window {
         width: calc(100vw - 2px);
         height: calc(100vh - 2px);
         border-radius: 0px;
-        transform: translate(0px, 0px) !important;
+        left: 0px !important;
+        top: 0px !important;
         z-index: 1 !important;
     }
     
