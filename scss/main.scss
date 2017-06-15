@@ -1,7 +1,12 @@
 @import "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Open+Sans:600";
 
 $window-header-height: 36px;
+$window-bar-height: 48px;
 $desktop-background: linear-gradient(to bottom, #555555 0%, #333333 100%) #444444;
+
+html {
+    overflow: hidden;
+}
 
 body {
     margin: 0px;
@@ -25,7 +30,7 @@ os-desktop {
 os-window {
     position: absolute;
     border: 1px solid #aaaaaa;
-    border-radius: 10px;
+    border-radius: 5px;
     min-width: 242px;
     min-height: $window-header-height - 1px;
     overflow: hidden;
@@ -40,7 +45,7 @@ os-window {
         z-index: 1 !important;
     }
     
-    &.is-minimized {
+    &.is-shaded {
         display: inline-block;
         width: auto !important;
         height: $window-header-height !important;
@@ -68,15 +73,18 @@ os-window {
             };
             cursor: initial;
             
-            [is = "window-control"] {
-                width: 16px;
-                height: 16px;
+            [is="window-control"] {
+                $size: 14px;
+                $spacing: 4px;
+                
+                width: $size;
+                height: $size;
                 padding: 0px;
                 margin: {
-                    top: ($window-header-height - 16px) / 2;
-                    bottom: ($window-header-height - 16px) / 2;
+                    top: ($window-header-height - $size) / 2;
+                    bottom: ($window-header-height - $size) / 2;
                     left: 0px;
-                    right: 4px;
+                    right: $spacing;
                 }
                 border: 1px solid #aaaaaa;
                 border-radius: 8px;
@@ -129,6 +137,19 @@ os-window {
                         background: linear-gradient(to bottom, #9ccc65 0%, #aed581 100%) #9ccc65;
                     }
                 }
+                
+                &.window-shade {
+                    border: 1px solid #333333;
+                    background: linear-gradient(to bottom, #777777 0%, #666666 100%) #6F6F6F;
+
+                    &:hover {
+                        background: linear-gradient(to bottom, #888888 0%, #666666 100%) #777777;
+                    }
+
+                    &:active {
+                        background: linear-gradient(to bottom, #666666 0%, #777777 100%) #9ccc65;
+                    }
+                }
             }
             
         }
@@ -146,6 +167,9 @@ os-window {
         height: 100%;
         padding: 8px;
         background: linear-gradient(to bottom, #e0e0e0 0%, #c8c8c8 100%) #e1e1e1;
+        html:not(.window-is-dragging) & {
+            user-select: text;
+        }
         
         &.textual {
             padding: 16px;
@@ -159,7 +183,7 @@ os-card {
     margin: 16px;
     padding: 16px;
     border: 1px solid #bbbbbb;
-    border-radius: 5px;
+    border-radius: 2px;
     background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%) #fdfdfd;
     
     os-window main & {

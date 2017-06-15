@@ -1,12 +1,16 @@
 @import "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Open+Sans:600";
-/* line 6, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+/* line 7, /home/arm32/Projects/Web/html-de/scss/main.scss */
+html {
+  overflow: hidden; }
+
+/* line 11, /home/arm32/Projects/Web/html-de/scss/main.scss */
 body {
   margin: 0px;
   font-family: "Lato", sans-serif;
   font-size: 14px;
   user-select: none; }
 
-/* line 13, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+/* line 18, /home/arm32/Projects/Web/html-de/scss/main.scss */
 os-desktop {
   position: absolute;
   top: 0px;
@@ -18,16 +22,16 @@ os-desktop {
   background-attachment: fixed;
   z-index: -999; }
 
-/* line 25, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+/* line 30, /home/arm32/Projects/Web/html-de/scss/main.scss */
 os-window {
   position: absolute;
   border: 1px solid #aaaaaa;
-  border-radius: 10px;
+  border-radius: 5px;
   min-width: 242px;
   min-height: 35px;
   overflow: hidden;
   z-index: 0; }
-  /* line 34, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+  /* line 39, /home/arm32/Projects/Web/html-de/scss/main.scss */
   os-window.is-maximized {
     width: calc(100vw - 2px);
     height: calc(100vh - 2px);
@@ -35,12 +39,12 @@ os-window {
     left: 0px !important;
     top: 0px !important;
     z-index: 1 !important; }
-  /* line 43, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
-  os-window.is-minimized {
+  /* line 48, /home/arm32/Projects/Web/html-de/scss/main.scss */
+  os-window.is-shaded {
     display: inline-block;
     width: auto !important;
     height: 36px !important; }
-  /* line 49, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+  /* line 54, /home/arm32/Projects/Web/html-de/scss/main.scss */
   os-window header {
     position: relative;
     border-bottom: 1px solid #cccccc;
@@ -49,7 +53,7 @@ os-window {
     background: linear-gradient(to bottom, #fafafa 0%, #eeeeee 100%) #f4f4f4;
     font-family: "Open Sans", "Lato", sans-serif;
     cursor: move; }
-    /* line 58, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+    /* line 63, /home/arm32/Projects/Web/html-de/scss/main.scss */
     os-window header .window-controls {
       position: absolute;
       float: right;
@@ -60,81 +64,94 @@ os-window {
       padding-right: 6px;
       padding-bottom: 1px;
       cursor: initial; }
-      /* line 71, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+      /* line 76, /home/arm32/Projects/Web/html-de/scss/main.scss */
       os-window header .window-controls [is="window-control"] {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         padding: 0px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 11px;
+        margin-bottom: 11px;
         margin-left: 0px;
         margin-right: 4px;
         border: 1px solid #aaaaaa;
         border-radius: 8px;
         outline: none;
         background: linear-gradient(to bottom, #dedede 0%, #c4c4c4 100%) #d1d1d1; }
-        /* line 86, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+        /* line 94, /home/arm32/Projects/Web/html-de/scss/main.scss */
         os-window header .window-controls [is="window-control"]:hover {
           background: linear-gradient(to bottom, #eeeeee 0%, #c4c4c4 100%) #dedede; }
-        /* line 90, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+        /* line 98, /home/arm32/Projects/Web/html-de/scss/main.scss */
         os-window header .window-controls [is="window-control"]:active {
           background: linear-gradient(to bottom, #c4c4c4 0%, #cccccc 100%) #c4c4c4; }
-        /* line 94, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+        /* line 102, /home/arm32/Projects/Web/html-de/scss/main.scss */
         os-window header .window-controls [is="window-control"].window-close {
           border: 1px solid #991717;
           background: linear-gradient(to bottom, #e57373 0%, #ef5350 100%) #ea6362; }
-          /* line 98, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+          /* line 106, /home/arm32/Projects/Web/html-de/scss/main.scss */
           os-window header .window-controls [is="window-control"].window-close:hover {
             background: linear-gradient(to bottom, #ef9a9a 0%, #ef5350 100%) #e57373; }
-          /* line 102, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+          /* line 110, /home/arm32/Projects/Web/html-de/scss/main.scss */
           os-window header .window-controls [is="window-control"].window-close:active {
             background: linear-gradient(to bottom, #ef5350 0%, #e57373 100%) #c95959; }
-        /* line 107, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+        /* line 115, /home/arm32/Projects/Web/html-de/scss/main.scss */
         os-window header .window-controls [is="window-control"].window-minimize {
           border: 1px solid #f9a825;
           background: linear-gradient(to bottom, #fff176 0%, #ffee58 100%) #ffee58; }
-          /* line 111, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+          /* line 119, /home/arm32/Projects/Web/html-de/scss/main.scss */
           os-window header .window-controls [is="window-control"].window-minimize:hover {
             background: linear-gradient(to bottom, #fffde7 0%, #ffee58 100%) #fff176; }
-          /* line 115, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+          /* line 123, /home/arm32/Projects/Web/html-de/scss/main.scss */
           os-window header .window-controls [is="window-control"].window-minimize:active {
             background: linear-gradient(to bottom, #ffee58 0%, #fffde7 100%) #fff59d; }
-        /* line 120, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+        /* line 128, /home/arm32/Projects/Web/html-de/scss/main.scss */
         os-window header .window-controls [is="window-control"].window-maximize {
           border: 1px solid #689f38;
           background: linear-gradient(to bottom, #aed581 0%, #9ccc65 100%) #a5d173; }
-          /* line 124, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+          /* line 132, /home/arm32/Projects/Web/html-de/scss/main.scss */
           os-window header .window-controls [is="window-control"].window-maximize:hover {
             background: linear-gradient(to bottom, #c5e1a5 0%, #9ccc65 100%) #aed581; }
-          /* line 128, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+          /* line 136, /home/arm32/Projects/Web/html-de/scss/main.scss */
           os-window header .window-controls [is="window-control"].window-maximize:active {
             background: linear-gradient(to bottom, #9ccc65 0%, #aed581 100%) #9ccc65; }
-    /* line 136, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+        /* line 141, /home/arm32/Projects/Web/html-de/scss/main.scss */
+        os-window header .window-controls [is="window-control"].window-shade {
+          border: 1px solid #333333;
+          background: linear-gradient(to bottom, #777777 0%, #666666 100%) #6F6F6F; }
+          /* line 145, /home/arm32/Projects/Web/html-de/scss/main.scss */
+          os-window header .window-controls [is="window-control"].window-shade:hover {
+            background: linear-gradient(to bottom, #888888 0%, #666666 100%) #777777; }
+          /* line 149, /home/arm32/Projects/Web/html-de/scss/main.scss */
+          os-window header .window-controls [is="window-control"].window-shade:active {
+            background: linear-gradient(to bottom, #666666 0%, #777777 100%) #9ccc65; }
+    /* line 157, /home/arm32/Projects/Web/html-de/scss/main.scss */
     os-window header .title {
       display: inline-block;
       width: calc(100% - 16px);
       height: 36px;
       line-height: 36px;
       padding-left: 16px; }
-  /* line 145, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+  /* line 166, /home/arm32/Projects/Web/html-de/scss/main.scss */
   os-window main {
     height: 100%;
     padding: 8px;
     background: linear-gradient(to bottom, #e0e0e0 0%, #c8c8c8 100%) #e1e1e1; }
-    /* line 150, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+    /* line 170, /home/arm32/Projects/Web/html-de/scss/main.scss */
+    html:not(.window-is-dragging) os-window main {
+      user-select: text; }
+    /* line 174, /home/arm32/Projects/Web/html-de/scss/main.scss */
     os-window main.textual {
       padding: 16px;
       background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%) #fdfdfd; }
 
-/* line 157, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+/* line 181, /home/arm32/Projects/Web/html-de/scss/main.scss */
 os-card {
   display: block;
   margin: 16px;
   padding: 16px;
   border: 1px solid #bbbbbb;
-  border-radius: 5px;
+  border-radius: 2px;
   background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%) #fdfdfd; }
-  /* line 165, C:/- - ARM32 - -/Projects/Web/HTML Desktop Environment/scss/main.scss */
+  /* line 189, /home/arm32/Projects/Web/html-de/scss/main.scss */
   os-window main os-card {
     margin: 8px; }
 

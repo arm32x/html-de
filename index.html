@@ -1,37 +1,40 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset = "utf-8" />
+        <meta charset="utf-8" />
         
-        <title>HTML OS</title>
+        <title>HTML Desktop Environment</title>
         
-        <link rel = "stylesheet" href = "css/main.css" />
-        <script src = "js/main.js" async></script>
+        <link rel="stylesheet" href="css/main.css" />
+        <script src="js/main.js" async></script>
     </head>
     <body>
         <os-desktop>
             
         </os-desktop>
-        <os-window>
+        <os-window-bar>
+            
+        </os-window-bar>
+        <os-window class="is-shaded">
             <header>
-                <span class = "title">Hello, world!</span>
-                <span class = "window-controls">
-                    <button is = "window-control" class = "window-maximize"></button>
-                    <button is = "window-control" class = "window-minimize"></button>
-                    <button is = "window-control" class = "window-close"></button>
+                <span class="title">Hello, world!</span>
+                <span class="window-controls">
+                    <button is="window-control" class="window-maximize"></button>
+                    <button is="window-control" class="window-shade"></button>
+                    <button is="window-control" class="window-close"></button>
                 </span>
             </header>
-            <main class = "textual">
+            <main class="textual">
                 Hello, world!
             </main>
         </os-window>
-        <os-window style = "left: 252px;">
+        <os-window style="left: 252px;">
             <header>
-                <span class = "title">Hello, world!</span>
-                <span class = "window-controls">
-                    <button is = "window-control" class = "window-maximize"></button>
-                    <button is = "window-control" class = "window-minimize"></button>
-                    <button is = "window-control" class = "window-close"></button>
+                <span class="title">Hello, world!</span>
+                <span class="window-controls">
+                    <button is="window-control" class="window-maximize"></button>
+                    <button is="window-control" class="window-shade"></button>
+                    <button is="window-control" class="window-close"></button>
                 </span>
             </header>
             <main>
